@@ -68,7 +68,7 @@
 		status = "okay";
 		/* undocumented properties */
 		ddc5v_delay = <1>; /* 50ms */
-		csi_port = <1>; /* Single-link */
+		csi_port = <2>; /* Single-link */
 		/* PLL = 1.5Gbps to get 4k@30fps */
 		pll_prd = /bits/ 16 <15>;
 		pll_frs = /bits/ 16 <0>;
@@ -94,30 +94,12 @@
 				link-frequencies = /bits/ 64 <297000000>;
 			};
 		};
-
-		port@1 {
-			tc358840_mipi2_ep: endpoint {
-				remote-endpoint = <&mipi2_tc358840_ep>;
-				data-lanes = <1 2 3 4>;
-				clock-lanes = <0>;
-				clock-noncontinuous;
-				link-frequencies = /bits/ 64 <297000000>;
-			};
-		};
 	};
 };
 
 &mipi_csi_1 {
 	port {
 		/delete-node/ endpoint@1;
-
-		mipi1_tc358840_ep: endpoint@1 {
-			remote-endpoint = <&tc358840_mipi1_ep>;
-			data-lanes = <1 2 3 4>;
-			csis-hs-settle = <13>;
-			csis-clk-settle = <2>;
-			csis-wclk;
-		};
 	};
 };
 
@@ -125,8 +107,8 @@
 	port {
 		/delete-node/ endpoint@1;
 
-		mipi2_tc358840_ep: endpoint@1 {
-			remote-endpoint = <&tc358840_mipi2_ep>;
+		mipi1_tc358840_ep: endpoint@1 {
+			remote-endpoint = <&tc358840_mipi1_ep>;
 			data-lanes = <1 2 3 4>;
 			csis-hs-settle = <13>;
 			csis-clk-settle = <2>;
