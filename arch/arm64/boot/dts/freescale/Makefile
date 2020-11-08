@@ -172,6 +172,7 @@ dtb-$(CONFIG_ARCH_FSL_IMX8MM) += fsl-imx8mm-evk.dtb \
 				 imx8mm-nitrogen8mm_rev2.dtb \
 				 imx8mm-nitrogen8mm_rev2-m4.dtb \
 				 imx8mm-nitrogen8mm-tc358743.dtb \
+				 imx8mm-nitrogen8mm_rev2-lt8912.dtb \
 				 imx8mm-nitrogen8mm_som.dtb \
 				 imx8mm-nitrogen8mm_som-m4.dtb \
 				 imx8mm-nitrogen8mm_som-mcp25625.dtb \
@@ -190,5 +191,3 @@ dtb-$(CONFIG_ARCH_FSL_IMX8MN) += fsl-imx8mn-ddr4-evk.dtb \
 				 imx8mn-nitrogen8_nano-m4.dtb \
 				 imx8mn-nitrogen8mn.dtb \
 				 imx8mn-nitrogen8mn_som.dtb \
-				 imx8mn-nitrogen8mn_som-m4.dtb \
-
